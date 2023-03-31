@@ -23,7 +23,6 @@ public class ArrayInsert {
     }
 
     public static void main(String[] args) {
-
         //1. 배열의 사이즈를 먼저 1 늘려놓음
         //2. 원본배열을 다 복사해놓음
         //3. 맨 뒤부터 타겟인덱스까지 한칸씩 뒤로 민다.
@@ -34,6 +33,6 @@ public class ArrayInsert {
 
         insert(newData,targetIndex);
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr)); //[10, 20, 30, 40, 50, 90]
     }
 }

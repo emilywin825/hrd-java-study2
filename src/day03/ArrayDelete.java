@@ -27,5 +27,7 @@ public class ArrayDelete {
         temp=null;
 
         System.out.println("삭제후 : "+ Arrays.toString(arr));
+//        삭제전 : [1, 3, 5, 7, 9, 11]
+//        삭제후 : [1, 5, 7, 9, 11]
     }
 }

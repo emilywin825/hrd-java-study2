@@ -2,7 +2,6 @@ package day03;
 
 public class ArraySearch {
 
-
     public static int indexOf(String target) {
         String[] foods = {"삼겹살", "족발", "피자", "햄버거"};
         foods[2]="치킨";
@@ -20,6 +19,5 @@ public class ArraySearch {
     public static void main(String[] args) {
         int index=indexOf("치킨");
         System.out.println("찾은 인덱스 : " + index);
-
     }
 }
