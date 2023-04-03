@@ -5,5 +5,6 @@ public class FieldMain {
 
         FieldAndLocal fl = new FieldAndLocal();
         System.out.println(fl.a);
+//        f1.c=100; //불가
     }
 }

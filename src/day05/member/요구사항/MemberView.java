@@ -37,7 +37,7 @@ public class MemberView {
                     signUp();
                     break;
                 case "2":
-                    showDetailmember();
+                    showDetailMember();
                     stop();
                     break;
                 case "3":
@@ -45,6 +45,7 @@ public class MemberView {
                     stop();
                     break;
                 case "4":
+                    changePasswordViewProcess();
                     break;
                 case "5":
                     break;
@@ -62,6 +63,33 @@ public class MemberView {
             }
         }
     }
+
+    // 비밀번호 변경 입출력 처리
+    void changePasswordViewProcess() {
+
+        String email = input("# 수정할 대상의 이메일: ");
+
+        // 대상 탐색
+        Member foundMember = mr.findByEmail(email);
+
+        if (foundMember != null) {
+            // 수정 진행
+            System.out.printf("%s님의 비밀번호를 변경합니다!\n"
+                    , foundMember.memberName);
+            // 기존 비밀번호와 같으면 변경 취소
+            String newPassword = input("# 새로운 비밀번호: ");
+            if (foundMember.password.equals(newPassword)) {
+                System.out.println("# 기존 비밀번호과 같습니다!");
+                return;
+            }
+            mr.changePassword(email, newPassword);
+            System.out.println("\n# 비밀번호가 성공적으로 수정되었습니다.");
+
+        } else {
+            System.out.println("\n# 조회 결과가 없습니다.");
+        }
+    }
+
 
     String input(String message) {
         System.out.print(message);
@@ -105,30 +133,36 @@ public class MemberView {
         }
 
         int age =Integer.parseInt(input("# 나이:"));
-
-        //실제 저장 명령
-        Member newMember = new Member(email,password,name,(mr.getLastMemberId() + 1),gender,age);
-
+        // 실제 저장 명령
+        Member newMember = new Member(
+                email, password,
+                name, mr.getLastMemberId() + 1,
+                gender, age
+        );
         mr.addMember(newMember);
 
         System.out.println("\n# 회원 가입 성공!!");
         stop();
 
+
     }
 
-    //회원 개별조회를 위한 입출력처리
-    void showDetailmember(){
-        //이메일을 입력하세요!
-        System.out.println("#조회를 시작합니다!");
-        System.out.print("#이메일 : ");
-        String email = sc.nextLine();
-        Member m=mr.searchMember(email);
-        //찾은 회원의 정보~~~~
-        if (m != null) {
-            System.out.println(m.inform());
-        }else{
-            System.out.println("# 조회된 회원이 없습니다.");
+    // 회원 개별조회를 위한 입출력처리
+    void showDetailMember() {
+        // 이메일 입력하세요!
+        String inputEmail = input("# 조회를 시작합니다!\n# 이메일: ");
+        Member foundMember = mr.findByEmail(inputEmail);
+        // 찾은 회원의 정보 ~~~~~~
+        if (foundMember != null) {
+            System.out.println("\n========= 조회 결과 =========");
+            System.out.printf("# 이름: %s\n", foundMember.memberName);
+            System.out.printf("# 비밀번호: %s\n", foundMember.password);
+            System.out.printf("# 성별: %s\n", (foundMember.gender == Gender.MALE) ? "남성" : "여성");
+            System.out.printf("# 나이: %d세\n", foundMember.age);
+        } else {
+            System.out.println("\n# 조회된 회원이 없습니다.");
         }
-
+        stop();
     }
+
 }

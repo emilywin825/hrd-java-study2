@@ -2,6 +2,7 @@ package day05.member.요구사항;
 
 //역할 : 회원 저장소 역할
 public class MemberRepository {
+    public static final int NOT_FOUND = -1;
     Member[] memberList;
 
     public MemberRepository() {
@@ -14,9 +15,8 @@ public class MemberRepository {
 
     /** * 모든 회원 정보를 출력해주는 메소드 */
     void showMembers() {
-        System.out.printf("==============현재 회원정보 (총 %d명)============\n",memberList.length );
-
-        for(Member m : memberList){
+        System.out.printf("=========== 현재 회원정보 (총 %d명) ===========\n" , memberList.length);
+        for (Member m : memberList) {
             System.out.println(m.inform());
         }
     }
@@ -61,6 +61,51 @@ public class MemberRepository {
     int getLastMemberId(){
          return memberList[memberList.length-1].memberId;
     }
+    /**
+     * 이메일을 통해 특정 회원 객체를 찾아서 반환하는 기능
+     *
+     * @return : 찾은 회원의 객체정보, 못찾으면 null반환
+     * @param1 email : 찾고 싶은 회원의 이메일
+     */
+    Member findByEmail(String email) {
+        for (Member m : memberList) {
+            if (email.equals(m.email)) {
+                return m;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 이메일을 통해 저장된 회원의 인덱스값을 알아내는 메서드
+     * @param email - 탐색 대상의 이메일
+     * @return : 찾아낸 인덱스, 못찾으면 -1 리턴
+     */
+    int findIndexByEmail(String email) {
+        for (int i = 0; i < memberList.length; i++) {
+            if (memberList[i].email.equals(email))
+                return i;
+        }
+        return NOT_FOUND;
+    }
+
+    /**
+     * 비밀 번호를 수정하는 기능
+     * @param email : 수정 대상의 이메일
+     * @param newPassword : 변경할 새로운 비밀번호
+     */
+    boolean changePassword(String email, String newPassword) {
+
+        // 인덱스 탐색
+        int index = findIndexByEmail(email);
+
+        // 수정진행
+        if (index == NOT_FOUND) return false;
+
+        memberList[index].password = newPassword;
+        return true;
+    }
+
 
     /**  개별회원 정보 조회하는 기능*/
     Member searchMember(String email){
@@ -70,5 +115,10 @@ public class MemberRepository {
                 }
         }
         return null;
+    }
+
+    //멤버가 비었는지 확인^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    boolean isEmpty(){
+        return  memberList.length==0;
     }
 }

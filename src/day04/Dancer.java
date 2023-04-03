@@ -41,9 +41,6 @@ public class Dancer {
         genre=dGenre;
         level=dLevel;
     }
-    
-    
-    
 
     //기능(메서드) : static을 붙이지 마세요
     //춤추는 기능
@@ -60,8 +57,4 @@ public class Dancer {
     String introduce() {
         return  String.format("내이름은 %s이고, %s팀에 소속되어 있습니다.",dancerName,crewName);
     }
-
-
-
-
 }
