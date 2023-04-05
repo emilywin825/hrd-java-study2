@@ -2,6 +2,7 @@ package day07.static_;
 
 import day07.util.Utility;
 
+import static day07.static_.Count.*;
 import static day07.util.Utility.makeLine;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
         Count.x=10;
         c2.y=20;
 
-        Count.m1();
+        m1();
         c1.m2();
 
         System.out.printf("c1 = x : %d, y : %d\n",c1.x,c1.y);
@@ -33,9 +34,5 @@ public class Main {
         System.out.println("cal1"+cal1.color);
 
         makeLine();//==Utility.makeLine(); (위에 import 했으므로)
-
-
-
-
     }
 }

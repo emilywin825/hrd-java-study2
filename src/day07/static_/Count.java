@@ -19,7 +19,7 @@ public class Count {
 //        System.out.println("y = "+y);  //만약 Count 객체가 여러개라면 y도 여러개 그러면 어떤 y를 대려와야 할 지 모르게 되니까 오류
         //m1을 호출할 때 클래스명.m1() 이렇게 호출하므로 this정보를 알 수 없음 그니까 오류
 
-        Count c3 = new Count();
+        Count c3 = new Count(); //static 내부에서 static 안붙은 데이터 사용하려면 객체 생성해서 사용!!!!
         System.out.println("c3.y=" + c3.y); //이렇게 하면 this가 c3라는 걸 아니까 가능
 //        System.out.println("c4.y = "+c4.y); //이렇게하면 c4를 매개변수로 받아오니까 this를 알 수 있으니까 가능
     }
