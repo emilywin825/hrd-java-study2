@@ -42,6 +42,5 @@ public class ArrayCopy {
         //원본만 달라짐
         System.out.println("원본배열 : "+ Arrays.toString(pets)); //원본배열 : [멍멍이, 사마귀, 짹짹이]
         System.out.println("사본배열 : "+ Arrays.toString(petsCopy)); //사본배열 : [멍멍이, 야옹이, 짹짹이]
-
     }
 }

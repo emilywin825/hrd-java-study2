@@ -1,5 +1,7 @@
 package day02;
 
+import java.util.Arrays;
+
 public class ArrayBasic {
     public static void main(String[] args) {
 
@@ -22,10 +24,8 @@ public class ArrayBasic {
             System.out.printf("%d번 데이터 : %d\n", i+1, arr[i]);
         }
         //foreach문 : iter
-        for(int n : arr){
-            System.out.printf("데이터 : %d\n",n);
+        for(int n : arr) {
+            System.out.printf("데이터 : %d\n", n);
         }
-
-
     }
 }

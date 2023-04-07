@@ -34,7 +34,6 @@ public class StdIO {
 //        int result = scanner.nextInt(); //사용 안하는게 좋음
         String str=scanner.nextLine();
 
-
         int result=0;
         try{
             result=Integer.parseInt(str); //Integer.parseInt : String to int
@@ -43,10 +42,6 @@ public class StdIO {
         }
 
         System.out.println("result = " + result);
-
-
-
-
 
         System.out.println("result = " + result);
 
