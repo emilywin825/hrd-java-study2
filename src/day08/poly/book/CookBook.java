@@ -21,6 +21,6 @@ public class CookBook extends Book{
 
     @Override
     public String info() {
-        return String.format("# 분류 : 요리책, %s, 쿠폰유무 : %s세", super.info(), this.coupon?"있음" : "없음");
+        return String.format("# 분류 : 요리책, %s 쿠폰유무 : %s", super.info(), this.coupon?"있음" : "없음");
     }
 }

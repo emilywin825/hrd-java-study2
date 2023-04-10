@@ -69,6 +69,4 @@ public class MusicRepository {
         temp[songArr.length]=singer;
         songArr=temp;
     }
-
-
 }

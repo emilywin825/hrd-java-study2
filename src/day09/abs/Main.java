@@ -10,14 +10,10 @@ public class Main {
                 new Cat("꾸꾸까까", "러시안블루",2),
         };
 
-
         for(Pet pet : pets){
             pet.eat();
         }
     }
-
-
-
 }
 
 

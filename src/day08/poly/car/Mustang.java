@@ -1,6 +1,9 @@
 package day08.poly.car;
 
 public class Mustang extends Car{
+    public Mustang() {
+        System.out.println("머스탱 생성자");
+    }
 
     public void accelerate(){
         System.out.println("머스탱이 달립니다.");

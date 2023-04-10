@@ -52,5 +52,4 @@ public class Book {
         }
         return String.format("제목 : %s,",prettier);
     }
-    
 }

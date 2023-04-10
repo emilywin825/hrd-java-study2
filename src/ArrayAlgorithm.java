@@ -28,8 +28,9 @@ public class ArrayAlgorithm<V> {
     }
     
     //배열의 중간에 데이터 추가
-//    public void
-    
+    public void insert(int index, V newData){
+
+    }
     
     //배열 복사
     public void copy(){
@@ -61,7 +62,7 @@ public class ArrayAlgorithm<V> {
     }
 
     public static void main(String[] args) {
-        ArrayAlgorithm ac=new ArrayAlgorithm(10,new Object[]{1,2,3});
-        ac.sArr=new Object[]{};
+//        ArrayAlgorithm ac=new ArrayAlgorithm(10,new Object[]{1,2,3});
+//        ac.sArr=new Object[]{};
     }
 }

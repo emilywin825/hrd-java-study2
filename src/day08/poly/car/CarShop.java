@@ -29,10 +29,10 @@ public class CarShop{
 
         //문자열과 정수와 논리를 배열에 담을 수 있는가? 최상위 클래스인 Object타입으로 배열을 만들면 다 담을 수 있음
         //하지만 좋지는 않음
-        Object[] oArr={
-                50,30,3.3,"zzzz",false,
-                new Mustang()
-        };
+//        Object[] oArr={
+//                50,30,3.3,"zzzz",false,
+//                new Mustang()
+//        };
 
     }
 

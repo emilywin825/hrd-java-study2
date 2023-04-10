@@ -119,7 +119,7 @@ public class MemberView {
 
         Gender gender;
         checkGender: while (true) {
-            String inputGender = input("#  성별[M/F]");
+            String inputGender = input("#  성별[M/F] : ");
             switch (inputGender.toLowerCase().charAt(0)){
                 case 'M' :
                     gender=Gender.MALE;
@@ -128,7 +128,7 @@ public class MemberView {
                     gender=Gender.FEMALE;
                     break checkGender;
                 default :
-                    System.out.print("# 성별을 M/F로 정확히 입력하세요.");
+                    System.out.println("# 성별을 M/F로 정확히 입력하세요.");
             }
         }
 

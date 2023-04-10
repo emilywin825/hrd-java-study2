@@ -1,6 +1,9 @@
 package day05.member.요구사항;
 
+import java.time.LocalDate;
+
 public class Member {
+    public LocalDate regDate; //회원가입 시간
     String email;
     String password;
     String memberName;

@@ -27,7 +27,7 @@ public class Main {
 
         makeLine();
 
-        Mustang car = (Mustang) shop.exportCar(6000); //타입 내릴때는 이렇게 명시해줘야 함 //타입에 맞게 다운캐스팅해야함. 런타임 시 오류남
+        Mustang car = (Mustang)shop.exportCar(6000); //타입 내릴때는 이렇게 명시해줘야 함 //타입에 맞게 다운캐스팅해야함. 런타임 시 오류남
         car.powerSound();
 
         makeLine();
