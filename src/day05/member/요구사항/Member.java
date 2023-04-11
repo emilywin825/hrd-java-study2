@@ -6,7 +6,7 @@ public class Member {
     public LocalDate regDate; //회원가입 시간
     String email;
     String password;
-    String memberName;
+    public String memberName;
     int memberId;
     Gender gender;
     int age;
