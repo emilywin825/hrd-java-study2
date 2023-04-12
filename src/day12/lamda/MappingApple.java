@@ -18,10 +18,8 @@ public class MappingApple {
     }
 
     public static <X, Y> List<Y> map(
-            List<X> basket
-            , GenericFunction<X, Y> mapper
+            List<X> basket, GenericFunction<X, Y> mapper
     ) {
-
         List<Y> mappedList = new ArrayList<>();
         for (X x : basket) {
             Y y = mapper.apply(x);
