@@ -51,10 +51,11 @@ public class 정리 {
     public static void main(String[] args) {
 
         List<String> dishName1 = getHealthyDishName1(Menu.menuList);
-        System.out.println("dishName1 = " + dishName1);
+        System.out.println("dishName1 = " + dishName1);//dishName1 = [season fruit, rice]
+
 
         List<String> dishName2 = getHealthyDishName2(Menu.menuList);
-        System.out.println("dishName2 = " + dishName2);
+        System.out.println("dishName2 = " + dishName2); //dishName2 = [season fruit, rice]
 
     }
 }

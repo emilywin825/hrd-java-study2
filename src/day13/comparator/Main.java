@@ -21,33 +21,16 @@ public class Main {
                 )
         );
 
-
-//        나이 순으로 오름차 정렬(나이 적은수)
-        studentList.sort((o1, o2) -> o1.getAge()-o2.getAge());
-//        studentList.sort(new Comparator<Student>() {
-//            @Override
-//            public int compare(Student o1, Student o2) {
-//                return o1.getAge()-o2.getAge();
-//            }
-//        });
-//        studentList.forEach(s-> System.out.println(s));
+        // 나이 순으로 오름차 정렬 (나이 적은순)
+        System.out.println("<나이 순으로 오름차 정렬 (나이 적은순)>");
+        studentList.sort((o1, o2) -> o1.getAge() - o2.getAge());
         studentList.forEach(s-> System.out.println(s));
 
         makeLine();
+
         System.out.println("< 이름 가나다순으로 오름차정렬 >");
-        //이름 가나다순으로 오름차정렬
-        studentList.sort(new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
-        studentList.forEach(s-> System.out.println(s));
-
-
-
-
-
-
+        // 이름 가나다순으로 오름차정렬
+        studentList.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+        studentList.forEach(s -> System.out.println(s));
     }
 }

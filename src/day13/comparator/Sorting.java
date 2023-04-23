@@ -28,12 +28,5 @@ public class Sorting {
                 .sorted(comparing(Dish::getName).reversed())
                 .collect(toList())
                 .forEach(d-> System.out.println(d));
-
-
-
-
-
-
-
     }
 }

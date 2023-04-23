@@ -37,6 +37,15 @@ public class Mapping {
                 .collect(Collectors.toList());
 
         simpleDishes.forEach(sd -> System.out.println(sd));
+/*SimpleDish{name='pork', calories='800kcal'}
+SimpleDish{name='beef', calories='700kcal'}
+SimpleDish{name='chicken', calories='400kcal'}
+SimpleDish{name='french fries', calories='530kcal'}
+SimpleDish{name='rice', calories='350kcal'}
+SimpleDish{name='season fruit', calories='120kcal'}
+SimpleDish{name='pizza', calories='550kcal'}
+SimpleDish{name='prawns', calories='400kcal'}
+SimpleDish{name='salmon', calories='450kcal'}*/
 
         /*
         * 메뉴 목록에서 칼로리가 500칼로리보다 큰 음식들을 필터링한 다음
@@ -49,13 +58,17 @@ public class Mapping {
                 .map(d -> new DishNameType(d))
                 .collect(Collectors.toList())
                 .forEach(dnt -> System.out.println(dnt));
-
+/*칼로리가 500칼로리보다 큰 음식들을 필터링한 다음 음식의 이름과 타입만 추출
+DishNameType{name='pork', Type=MEAT}
+DishNameType{name='beef', Type=MEAT}
+DishNameType{name='french fries', Type=OTHER}
+DishNameType{name='pizza', Type=OTHER}*/
         makeLine();
 
         //메뉴 목록에 있는 요리들의 총 칼로리수 구하기
         int totalCal = menuList.stream()
                 .mapToInt(d -> d.getCalories())
                 .sum();
-        System.out.println("totalCal = "+totalCal);
+        System.out.println("totalCal = "+totalCal); //totalCal = 4300
     }
 }
